@@ -11,8 +11,8 @@
 		"local": "node test.local.js",
 		"lint": "tsc --noEmit && eslint 'lib/**/*.ts'",
 		"lint.fix": "eslint 'lib/**/*.ts' --fix",
-		"docs": "typedoc",
 		"methods": "npx typedoc --json doc.json && tsx bin/generateMethods.ts && rimraf ./doc.json",
+		"docs": "typedoc && node --run methods",
 		"coverage": "jest --coverage",
 		"test": "jest --colors --detectOpenHandles test --runInBand",
 		"prepare": "husky install"

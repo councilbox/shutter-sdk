@@ -30,7 +30,7 @@ const order = [
 	'frames'
 ];
 
-let md = '# Methods\n\n';
+let md = '## Methods\n\n';
 
 for (const serviceName of order) {
 	const prop = clientClass.children.find(
@@ -39,7 +39,7 @@ for (const serviceName of order) {
 
 	if (!prop || prop.type?.type !== 'reference') continue;
 
-	md += `## ${serviceName}\n\n`;
+	md += `### ${serviceName}\n\n`;
 
 	const targetId = prop.type.target;
 	const targetClass = findById(data, targetId);
@@ -54,6 +54,21 @@ for (const serviceName of order) {
 	md += '\n';
 }
 
-fs.writeFileSync('METHODS.md', md);
+// Load README.md
+const readmePath = 'README.md';
+let readme = fs.readFileSync(readmePath, 'utf-8');
+
+// Replace methods section between markers
+const startMarker = '<!-- METHODS_START -->';
+const endMarker = '<!-- METHODS_END -->';
+const regex = new RegExp(`${startMarker}[\\s\\S]*?${endMarker}`);
+
+readme = readme.replace(
+	regex,
+	`${startMarker}\n\n${md.trim()}\n\n${endMarker}`
+);
+
+// Save README.md updated
+fs.writeFileSync(readmePath, readme);
 // eslint-disable-next-line no-console
-console.log('✅ METHODS.md generado');
+console.log('✅ README.md METHODS section updated');
