@@ -1,0 +1,40 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"lib": ["dom", "esnext"], 
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"resolveJsonModule": true,
+		"allowJs": true,
+		"outDir": "dist",
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true,
+		"strict": true,
+		"noImplicitAny": false,
+		"skipLibCheck": true,
+		"baseUrl": ".",
+		"paths": {
+		"*": [
+			"node_modules/*",
+			"src/types/*"
+		]
+		},
+		"typeRoots": [
+			"node_modules/@types"
+		],
+		"types": ["jest", "node"]
+	},
+	"include": [
+		"lib/**/*", "typedoc",
+	],
+	"exclude": [
+		"tests",
+		"dist",
+		"coverage",
+		"scripts",
+		"test.local.js",
+		"LICENSE",
+		"jest.config.ts",
+	]
+}

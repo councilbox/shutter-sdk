@@ -1,0 +1,7 @@
+{
+	"entryPoints": [
+		"typedoc/client.ts",
+		"typedoc/sdk-classes.ts"
+	],
+	"entryPointStrategy": "resolve"
+}

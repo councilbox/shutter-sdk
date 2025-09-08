@@ -1,0 +1,49 @@
+{
+	"name": "@councilbox/shutter-sdk",
+	"version": "1.6.0",
+	"description": "Shutter API - javascript SDK",
+	"main": "lib",
+	"homepage": "https://github.com/Councilbox/shutter-js#readme",
+	"bugs": {
+		"url": "https://github.com/Councilbox/shutter-js/issues"
+	},
+	"scripts": {
+		"local": "node test.local.js",
+		"lint": "tsc --noEmit && eslint 'lib/**/*.ts'",
+		"lint.fix": "eslint 'lib/**/*.ts' --fix",
+		"docs": "typedoc",
+		"coverage": "jest --coverage",
+		"test": "jest --colors --detectOpenHandles test --runInBand",
+		"prepare": "husky install"
+	},
+	"keywords": [
+		"shutter",
+		"sdk",
+		"meet",
+		"meeting",
+		"webrtc",
+		"video"
+	],
+	"author": "Miguel Rodriguez Crespo <mirodriguez11@gmail.com>",
+	"contributors": [
+		"Alejandro Rivas Quintana <alejandro.rivas@councilbox.com>"
+	],
+	"license": "MIT",
+	"dependencies": {
+		"@apollo/client": "^4.0.4",
+		"graphql": "^16.11.0"
+	},
+	"devDependencies": {
+		"@councilbox/shutter-eslint-config-base": "^1.0.7",
+		"@types/jest": "^30.0.0",
+		"eslint": "^9.34.0",
+		"husky": "^6.0.0",
+		"jest": "^30.1.3",
+		"nock": "^13.1.0",
+		"ts-jest": "^29.4.1",
+		"tsx": "^4.20.5",
+		"typedoc": "^0.28.12",
+		"typescript": "^5.9.2",
+		"typescript-eslint": "^8.42.0"
+	}
+}
