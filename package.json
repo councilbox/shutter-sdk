@@ -12,6 +12,7 @@
 		"lint": "tsc --noEmit && eslint 'lib/**/*.ts'",
 		"lint.fix": "eslint 'lib/**/*.ts' --fix",
 		"docs": "typedoc",
+		"methods": "npx typedoc --json doc.json && tsx bin/generateMethods.ts && rimraf ./doc.json",
 		"coverage": "jest --coverage",
 		"test": "jest --colors --detectOpenHandles test --runInBand",
 		"prepare": "husky install"
@@ -40,6 +41,7 @@
 		"husky": "^6.0.0",
 		"jest": "^30.1.3",
 		"nock": "^13.1.0",
+		"rimraf": "^6.0.1",
 		"ts-jest": "^29.4.1",
 		"tsx": "^4.20.5",
 		"typedoc": "^0.28.12",
