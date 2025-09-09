@@ -1,0 +1,15 @@
+tests/
+docs/
+bin/
+typedoc/
+.husky/
+coverage/
+.eslint.config.mjs
+jest.config.js
+*.tgz
+test.local.js
+.DS_Store
+.idea/
+.vscode/
+.github/
+node_modules/

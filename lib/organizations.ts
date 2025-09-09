@@ -61,6 +61,42 @@ export class Organizations {
 		this.gqlClient = gqlClient;
 	}
 
+	/**
+	 * `shutter.organizations.list()`
+	 *
+	 * Example:
+	 *
+	 * ```ts
+	 * try {
+	 *   const organizations = await shutter.organizations.list();
+	 *   console.log(organizations); // logs response data
+	 * } catch (err) {
+	 *   console.log(err); // logs any error
+	 * }
+	 * ```
+	 *
+	 * Promise Returns:
+	 *
+	 * ```json
+	 * [
+	 *   {
+	 *     "id": "109bec1d8aaef2395f48105c",
+	 *     "name": "Test Org 1",
+	 *     "logo": "<logo_url>",
+	 *     "created": "1620831261329",
+	 *     "owner": {
+	 *       "id": "109bec0f8aaef2395f481059",
+	 *       "name": "Test",
+	 *       "surname": "SHUTTER",
+	 *       "email": "test@shutter.com",
+	 *       "language": "en",
+	 *       "created": "1620831247972"
+	 *     }
+	 *   },
+	 *   ...
+	 * ]
+	 * ```
+	 */
 	async list() {
 		const variables = {};
 
